@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой репозиторий</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Содержимое репозитория</h1>
+    <ul id="file-list"></ul>
+
+    <script>
+        const files = [
+            // Здесь перечислите все ваши папки и файлы
+            { name: 'lab', path: 'lab/lab.txt' },
+            { name: 'txt', path: '22.txt' }
+            // Добавьте остальные папки и файлы
+        ];
+
+        const fileList = document.getElementById('file-list');
+
+        files.forEach(file => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = file.path;
+            a.textContent = file.name;
+            li.appendChild(a);
+            fileList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
